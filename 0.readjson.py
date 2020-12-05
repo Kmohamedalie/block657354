@@ -5,10 +5,19 @@ Created on Thu Nov 26 12:05:23 2020
 
 @author: andreamarin
 """
+
+                              #NOTE
+# =============================================================================
+# ***please download the json file of the bloock 657354 from
+# this link https://github.com/Kmohamedalie/block657354/blob/main/657354.json
+# 
+# ****** IN other to run your code you must save both  the json  file and the
+#  python file in the same directory/folder and run the script and explore
+#  
+# =============================================================================
  
-#please download the json file of the bloock 657354 from this link https://github.com/Kmohamedalie/block657354/blob/main/657354.json 
-#****** IN other to run your code you must save both  the json  file and the python file in the same directory/folder and run the script and explore
-    
+
+
 import json
 
 myfile = open('657354.json')
@@ -88,6 +97,7 @@ print(50*'_')
 
 
 
+
 # =============================================================================
 # 
 # #performing simple stat
@@ -121,45 +131,36 @@ print(f'The position of the minimum value transacted is {minPosition}.')
 print()
 
 
+print()
+print(10*'*','Simple statistical analysis',10*'*')
+print(f'1.The average amount of input is {avg}.')
+print(f'2.The max amount of input is {maxI}, it was moved from .')
+print(f'3.The min amount of input is {minI}.')
+
+
+
+
 
 #visualizing the data with matplotlib plot
 import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.array(inV)
+y = np.array(maxI)
+maxPosition = inV.index(maxI)
+minPosition = inV.index(minI)  
+
 
 plt.plot(x)
-plt.grid(color='k', linestyle='-', linewidth= 0.1)
-plt.show() 
-
-print()
-print(10*'*','Simple statistical analysis',10*'*')
-print(f'The average amount of input is {avg}.')
-print(f'The max amount of input is {maxI}.')
-print(f'The min amount of input is {minI}.')
-
+plt.plot(maxPosition,maxI,'r*') #indicating a red star for the minimum value transacted in the block which is 546.
+plt.plot(minPosition,minI,'r*') #indicating a red star for the minimum value value transacted in the block which is 43119903723.
+plt.ylabel('Input values') #label for the y-axis
+plt.xlabel('index') #label for the x-axis
+plt.suptitle('A Plot of all input values') #Main title of the plot
+plt.grid(color='k', linestyle='-', linewidth= 0.1) #grids on for simple visualization
+plt.show() #display the plot
 
 
-
-
-
-
-
-# =============================================================================
-# #create a list of strings that contains all the
-# #outputs associated with the block's transactions
-# 
-# #I must begin with the empty list
-# =============================================================================
-# =============================================================================
-# outputValues = []
-# 
-# for el in listoftransactions:
-#     #I want to add to l the field 'inputs'
-#     outputValues.append(el['out'][0:]['value'])
-# 
-# print(outputValues)
-# =============================================================================
 
 
 
