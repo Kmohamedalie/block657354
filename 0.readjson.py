@@ -130,12 +130,13 @@ minPosition = inV.index(minI)
 print(f'The position of the minimum value transacted is {minPosition}.') 
 print()
 
+bitC = 100000000
 
 print()
 print(10*'*','Simple statistical analysis',10*'*')
-print(f'1.The average amount of input is {avg}.')
-print(f'2.The max amount of input is {maxI}, it was moved from .')
-print(f'3.The min amount of input is {minI}.')
+print(f'1.The average amount of input is {avg} and {avg/bitC} in BTC.')
+print(f'2.The max amount of input is {maxI} and {maxI/bitC} in BTC.')
+print(f'3.The min amount of input is {minI} and {minI/bitC} in BTC.')
 
 
 
