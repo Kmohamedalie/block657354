@@ -1,3 +1,5 @@
+%download our csv file from here:  https://github.com/Kmohamedalie/block657354/blob/main/hashCode.csv
+
 T = readtable('hashCode.csv'); %import csv file
 
 maxVal = max(T.inputs);  %finding the maximum value transacted in the block
