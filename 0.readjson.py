@@ -5,7 +5,10 @@ Created on Thu Nov 26 12:05:23 2020
 
 @author: andreamarin
 """
-
+ 
+#please download the json file of the bloock 657354 from this link https://github.com/Kmohamedalie/block657354/blob/main/657354.json 
+#****** IN other to run your code you must save both  the json  file and the python file in the same directory/folder and run the script and explore
+    
 import json
 
 myfile = open('657354.json')
