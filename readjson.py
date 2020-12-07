@@ -98,6 +98,9 @@ print(50*'_')
 
 
 
+
+
+#Solution 1. Easy level
 # =============================================================================
 # 
 # #performing simple stat
@@ -130,15 +133,13 @@ minPosition = inV.index(minI)
 print(f'The position of the minimum value transacted is {minPosition}.') 
 print()
 
+bitC = 100000000
 
 print()
 print(10*'*','Simple statistical analysis',10*'*')
-print(f'1.The average amount of input is {avg}.')
-print(f'2.The max amount of input is {maxI}, it was moved from .')
-print(f'3.The min amount of input is {minI}.')
-
-
-
+print(f'1.The average amount of input is {avg} and {avg/bitC} in BTC.')
+print(f'2.The max amount of input is {maxI} and {maxI/bitC} in BTC.')
+print(f'3.The min amount of input is {minI} and {minI/bitC} in BTC.')
 
 
 #visualizing the data with matplotlib plot
@@ -159,6 +160,59 @@ plt.xlabel('index') #label for the x-axis
 plt.suptitle('A Plot of all input values') #Main title of the plot
 plt.grid(color='k', linestyle='-', linewidth= 0.1) #grids on for simple visualization
 plt.show() #display the plot
+
+
+
+
+
+
+#Solution 2.  Intermediate to advance
+# =============================================================================
+# Creating a dataframe using the hash and input values 
+# =============================================================================
+
+''' Please run this section line by line'''
+
+# importing pandas as pd 
+import pandas as pd 
+ 
+
+hashCode = list(l) #creating a new list  containing hashcodes
+del hashCode[0]     #deleting hash code at the origin or index 0 
+input_Values = list(inV) #creating a new list  containing input values
+
+# dictionary of lists 
+dict = {'hashCode': hashCode, 'inputs_Values': input_Values} 
+	
+df = pd.DataFrame(dict) 
+
+# saving the dataframe 
+df.to_csv('657354.csv') 
+
+#opening and reading the dataframe
+btc = open('657354.csv')
+btc1 = pd.read_csv(btc)
+
+#exploring the data first/last values with head,tail and describe function for quick summary.
+btc1.columns = ['index','hash','inputValues'] #renaming the columns
+btc1.head(); head = btc1.head() 
+btc1.tail(); tail = btc1.tail()
+btc1.describe(); summary_statistics = btc1.describe()
+print(f'''
+   ****************  head  ********************
+   {head}
+   
+   
+   
+   ***************  Tail   *******************
+   {tail}
+   
+   
+   
+   *******  summary_statistics **************
+   {summary_statistics}
+  ''')
+
 
 
 
