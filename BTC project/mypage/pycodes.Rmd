@@ -1,0 +1,28 @@
+---
+title: "MADLIBS"
+author: "Anonymous"
+date: "05/12/2020"
+output: html_document
+---
+
+```{r, setup, echo=FALSE,include=FALSE}
+library(reticulate)
+```
+
+
+```{python}
+#times table code
+print('Multiplication Table')
+for i in range(1 ,13):
+  for j in range(1, 13):
+    print('{0} times {1} is: {2}'.format(i,j,i*j))
+  print('-----------------------')
+```
+
+
+
+
+```{python}
+
+```
+
